@@ -1,5 +1,5 @@
 /* Reset some default styles */
-body, h1, p, img {
+h1, p, img {
     margin: 0;
     padding: 0;
 }
@@ -8,20 +8,76 @@ body, h1, p, img {
 body {
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+    align-items: center;
+    padding: 20px;
 }
 
 /* Style the header */
 h1 {
+    width: 97%;
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: #c7aeae;
+    background-color: #072a03;
+    color: #fe5d5d;
 }
 
 /* Style the image */
 img {
-    display: block;
     margin: 20px auto;
-    max-width: 100%;
+    width: 80%;
     height: auto;
+    border-radius: 15px;
+}
+
+button {
+    border-radius: 5px;
+    --c:  #229091; /* the color*/
+    height:fit-content;
+    padding:5px;
+    margin: 5px;
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+  button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  button:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }  
+  button {
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .3em .6em;
+    font-weight: 400;  
+    border: none;
+  }
+
+  #show{
+    --c : #ff4343;
+    top:175px;
+  }
+
+table{
+    border: #072a03;
+    border-width: 2px;
+    padding: 5px;
+    border-spacing:0px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: left;
+    font-size: .8rem;
 }
