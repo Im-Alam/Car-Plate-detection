@@ -8,7 +8,7 @@ import signal
 from time import sleep
 
 
-file_path_ = 'tfl (1)/tfl/uploads/cars.csv'
+file_path_ = 'uploads/cars.csv'
 
 
 app = Flask(__name__)
@@ -26,11 +26,11 @@ def generate_frames(file_path = file_path_):
         print("Error: Could not open camera.")
         return
 
-    with open(file_path, mode='a', newline='') as csvfile:
-        # Create a DictWriter object, specifying the fieldnames
-        fieldnames = ['Timestamp', 'CarNumber']
+    csvfile = open(file_path, mode='a', newline='')
+    # Create a DictWriter object, specifying the fieldnames
+    fieldnames = ['Timestamp', 'CarNumber']
+    if csvfile is not None:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
 
     while True:
         ret, frame = cap.read()
@@ -52,6 +52,8 @@ def generate_frames(file_path = file_path_):
             writer.writerow(data)
     
     cap.release()
+    csvfile.close()
+
 
 @app.route('/video_feed')
 def video_feed():
@@ -72,7 +74,7 @@ def shutdown_server():
 @app.route('/get_csv_data')
 def get_csv_data():
     # Load the CSV file into a DataFrame
-    df = pd.read_csv('tfl (1)/tfl/uploads/cars.csv')
+    df = pd.read_csv('uploads/cars.csv')
     # Convert DataFrame to JSON
     data = df.to_dict(orient='records')
     return jsonify(data)

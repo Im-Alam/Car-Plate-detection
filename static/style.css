@@ -1,83 +1,101 @@
-/* Reset some default styles */
-h1, p, img {
-    margin: 0;
-    padding: 0;
+/* Ensure the body takes full width of the viewport */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 5px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
 }
 
-/* Set a background color and font for the body */
-body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-    align-items: center;
-    padding: 20px;
+/* Center the content inside the .bdy div */
+.bdy {
+  padding: 30px;
+  border: 2px solid #072a03;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Style the header */
 h1 {
-    width: 97%;
-    text-align: center;
-    padding: 20px;
-    background-color: #072a03;
-    color: #fe5d5d;
+  width: -webkit-fill-available;
+  padding: 20px;
+  background-color: #072a03;
+  color: #fe5d5d;
+  border-radius: 10px;
+  margin: 0;
 }
 
 /* Style the image */
 img {
-    margin: 20px auto;
-    width: 80%;
-    height: auto;
-    border-radius: 15px;
+  margin: 20px 0;
+  width: 100%;
+  border-radius: 15px;
 }
 
 button {
-    border-radius: 5px;
-    --c:  #229091; /* the color*/
-    height:fit-content;
-    padding:5px;
-    margin: 5px;
-    box-shadow: 0 0 0 .1em inset var(--c); 
-    --_g: linear-gradient(var(--c) 0 0) no-repeat;
-    background: 
-      var(--_g) calc(var(--_p,0%) - 100%) 0%,
-      var(--_g) calc(200% - var(--_p,0%)) 0%,
-      var(--_g) calc(var(--_p,0%) - 100%) 100%,
-      var(--_g) calc(200% - var(--_p,0%)) 100%;
-    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
-    outline-offset: .1em;
-    transition: background-size .4s, background-position 0s .4s;
-  }
-  button:hover {
-    --_p: 100%;
-    transition: background-position .4s, background-size 0s;
-  }
-  button:active {
-    box-shadow: 0 0 9e9q inset #0009; 
-    background-color: var(--c);
-    color: #fff;
-  }  
-  button {
-    font-family: system-ui, sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: .3em .6em;
-    font-weight: 400;  
-    border: none;
-  }
+  border-radius: 5px;
+  --c: #229091; /* the color */
+  height: fit-content;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 0 0 0 .1em inset var(--c);
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background:
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+}
+button:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+button:active {
+  box-shadow: 0 0 9e9q inset #0009;
+  background-color: var(--c);
+  color: #fff;
+}
+button {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: .3em .6em;
+  font-weight: 400;
+  border: none;
+}
 
-  #show{
-    --c : #ff4343;
-    top:175px;
-  }
+#show {
+  --c: #ff4343;
+  top: 175px;
+}
 
-table{
-    border: #072a03;
-    border-width: 2px;
-    padding: 5px;
-    border-spacing:0px;
+table {
+  border: #072a03;
+  border-width: 2px;
+  padding: 5px;
+  border-spacing: 0;
+  margin: 20px auto;
+  width: 100%;
 }
 th, td {
-    border: 1px solid black;
-    padding: 2px;
-    text-align: left;
-    font-size: .8rem;
+  border: 1px solid black;
+  padding: 2px;
+  text-align: left;
+  font-size: .8rem;
+}
+
+#csv-data {
+  display: none;
+  overflow-y: scroll;
+  height: 300px;
+  margin-top: 20px;
 }
