@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Number Plate Detection Webpage
 
 ! [Number Plate recognition web page](uploads/ANPR_screen.png)
@@ -94,3 +95,7 @@
 
 6. **Timing Control**:
    - The `time` module is used to pause the frame capture until a number plate is detected.
+=======
+# Car-Plate-detection
+Computer Vision Implementation with PyTesseract and Haar Cascade  This repository features a computer vision project using PyTesseract and Haar Cascade to detect number regions and recognize characters. Built with Flask, it provides a web interface for user interaction. Detected numbers are stored in a CSV file with timestamps.
+>>>>>>> origin/main
