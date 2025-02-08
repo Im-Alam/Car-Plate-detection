@@ -3,7 +3,8 @@
 ! [Number Plate recognition web page](uploads/ANPR_screen.png)
 
 ## Tech Stack
-
+## YOLO11n.pt Training
+- **[Colab Notebook](https://colab.research.google.com/drive/1NjlRSHjfrlHEKHN3rAELBoO7X087SxLG?usp=sharing)**
 ### Computer Vision
 - **OpenCV**: Used for opening the camera, capturing frames, converting images to grayscale, drawing rectangles, and displaying text on images.
 - **Haar Cascade Classifier**: Specifically, `haarcascade_russian_plate_number.xml` for detecting number plates.
