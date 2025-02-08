@@ -2,3 +2,7 @@ __pycache__
 *.pyc
 data
 .NumberPlateCV
+goturn.*
+Car_Number_Plate
+*.mp4
+*.pt
